@@ -61,7 +61,25 @@ define([
 
 
 
+        function load_info_label(){
+            show_usage();
+            update_usage();
+            if(!Jupyter.toolbar) {
+                $([Jupyter.events]).on("app_initialized.NotebookApp", load_info_label);
+                return;
+            }
+            setInterval(update_usage, 10*1000);
+        }
 
+
+        function load_ipython_extension() {
+            load_info_label();
+        }
+
+
+        return {
+            load_ipython_extension: load_ipython_extension
+        };
 
 
 })
