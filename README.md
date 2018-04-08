@@ -9,6 +9,10 @@
 <img src="megaclite/static/megaclite.png" style="max-width:50%;"/>
 </p>
 
+<p align="center">
+<img src="megaclite/static/megaclite_demo.gif" />
+</p>
+
 
 Megaclite provides monitoring, auditing & management for JupyterHub.
 
@@ -118,6 +122,16 @@ c.JupyterHub.admin_users = {'username'}
 ```
 
 NOTE: If you skip this, Megaclite will NOT be able to kill sessions.
+
+## Enabling the extension
+
+
+
+## See the magic unleash
+
+<p align="center">
+<img src="megaclite/static/megaclite_demo.png" />
+</p>
 
 
 ## Contributing
