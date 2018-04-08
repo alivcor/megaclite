@@ -6,7 +6,7 @@
 [![Build Status](https://travis-ci.org/alivcor/megaclite.svg?branch=master)](https://travis-ci.org/alivcor/megaclite)
 
 <p align="center">
-<img src="megaclite/static/megaclite.png" style="max-width:10px;"/>
+<img src="megaclite/static/megaclite.png" style="width:150px;"/>
 </p>
 
 
