@@ -1,13 +1,14 @@
+
+<p align="center">
+<img src="megaclite/static/megaclite_350.png" style="max-width:50%;"/>
+</p>
+
 # megaclite
 ## Resource Manager for JupyterHub
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/alivcor/segraph)
 [![dependencies Status](https://david-dm.org/boennemann/badges/status.svg)](https://github.com/alivcor/segraph)
 [![Build Status](https://travis-ci.org/alivcor/megaclite.svg?branch=master)](https://travis-ci.org/alivcor/megaclite)
-
-<p align="center">
-<img src="megaclite/static/megaclite.png" style="max-width:50%;"/>
-</p>
 
 <p align="center">
 <img src="megaclite_demo.gif" />
