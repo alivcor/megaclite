@@ -137,7 +137,7 @@ NOTE: If you skip this, Megaclite will NOT be able to kill sessions.
 install both the serverextension and the toolbar button (nbextension) with:
 
 ```bash
-pip install pizzabutton
+pip install megaclite
 jupyter serverextension enable --py megaclite --sys-prefix
 jupyter nbextension install --py megaclite --sys-prefix
 jupyter nbextension enable --py megaclite --sys-prefix
