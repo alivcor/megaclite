@@ -24,8 +24,8 @@ Megaclite provides monitoring, auditing & management for JupyterHub.
 Megaclite provides the following functionalities:
 
 - A small label in the toolbar to display memory utilization (summed across all notebooks) on client side
-- Warning pop-up when user exhausts 75% of his memory limit on client-side.
-- Alert pop-up when user crosses his memory limit on client-side.
+- Warning pop-up when user exhausts 75% of his/her memory limit on client-side.
+- Alert pop-up when user crosses his/her memory limit on client-side.
 - Kills kernel/session when user surpasses the limits.
 - Auditing on server-side.
 
