@@ -9,7 +9,7 @@ define([
         var jh_username = utils.get_body_data('baseUrl').match(/.*\/user\/(.*)\//)[1]
         var megacliteUrl = utils.url_path_join(utils.get_body_data('baseUrl'), 'megaclite/' + jh_username)
         $.getJSON(megacliteUrl, function(data){
-                $("#maintoolbar-container").append("<span id=\"megaclite\"> &nbsp; <b> Memory Utilization : <span id=\"actual_val\">" + data['actual_val'] + "</span> MB </b></span>");
+                $("#maintoolbar-container").append("<img src=\"megaclite.png\"/><span id=\"megaclite\"> &nbsp; <b> Memory Utilization : <span id=\"actual_val\">" + data['actual_val'] + "</span> MB </b></span>");
 
             });
     }
