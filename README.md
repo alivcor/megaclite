@@ -21,7 +21,15 @@ Megaclite provides monitoring, auditing & management for JupyterHub.
 
 ## Getting Started
 
-Make ur eyou have sudospawner up and running.
+Megaclite provides the following functionalities:
+
+- A small label in the toolbar to display memory utilization (summed across all notebooks) on client side
+- Warning pop-up when user exhausts 75% of his memory limit on client-side.
+- Alert pop-up when user crosses his memory limit on client-side.
+- Kills kernel/session when user surpasses the limits.
+- Auditing on server-side.
+
+Make sure you have sudospawner up and running.
 
 ### Prerequisites
 
@@ -126,7 +134,22 @@ NOTE: If you skip this, Megaclite will NOT be able to kill sessions.
 
 ## Enabling the extension
 
+install both the serverextension and the toolbar button (nbextension) with:
 
+```bash
+pip install pizzabutton
+jupyter serverextension enable --py megaclite --sys-prefix
+jupyter nbextension install --py megaclite --sys-prefix
+jupyter nbextension enable --py megaclite --sys-prefix
+```
+
+You can check that the install was successful with:
+```bash
+jupyter nbextension list
+jupyter serverextension list
+```
+
+You may also enable it from the nbextensions-configurator UI.
 
 ## See the magic unleash
 
