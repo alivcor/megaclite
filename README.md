@@ -4,7 +4,7 @@
 </p>
 
 # megaclite
-## Resource Manager for JupyterHub
+## Resource Manager for JupyterHub, also a moon.
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/alivcor/segraph)
 [![dependencies Status](https://david-dm.org/boennemann/badges/status.svg)](https://github.com/alivcor/segraph)
