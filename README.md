@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-<img src="megaclite/static/megaclite_demo.gif" />
+<img src="megaclite_demo.gif" />
 </p>
 
 
@@ -130,7 +130,7 @@ NOTE: If you skip this, Megaclite will NOT be able to kill sessions.
 ## See the magic unleash
 
 <p align="center">
-<img src="megaclite/static/megaclite_demo.png" />
+<img src="megaclite_demo.png" />
 </p>
 
 
