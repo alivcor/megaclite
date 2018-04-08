@@ -6,8 +6,8 @@ from subprocess import Popen, PIPE
 import logging
 from .megaclite_config import *
 
-logger = logging.basicConfig(level=logging_level)
-
+logging.basicConfig(level=logging_level)
+logger = logging.getLogger(__name__)
 
 
 def _jupyter_server_extension_paths():
@@ -56,7 +56,7 @@ def killNotebookSession(username):
 
 
 def monitorUsage(username, memory_usage):
-    logger.info("user : " + username + " | usage : " + str(memory_usage))
+    logger.info("user : " + username + " | usage : %s", str(memory_usage))
     if(memory_usage > 1.2*memory_limit):
         logger.debug("Killing Notebook Session for user: %s. Surpassed Limits", username)
         killed = killNotebookSession(username)
@@ -65,7 +65,7 @@ def monitorUsage(username, memory_usage):
 
 
 def fetchUsage(username):
-    memory_usage = float(Popen("ps uU " + username + "| grep jup | awk '{sum=sum+$6}; END {print sum/(1024)"))
+    memory_usage = float(Popen("ps uU " + username + "| grep jup | awk '{sum=sum+$6}; END {print sum/(1024)}'", shell=True, stdout=PIPE).stdout.read().decode("utf-8").strip())
     monitorUsage(username, memory_usage)
     return memory_usage
 
@@ -77,6 +77,7 @@ class Megaclite(IPythonHandler):
     def get(self, username):
         try:
             usage_val = fetchUsage(username=username)
+            logger.debug("fetched usage_val : %s", str(usage_val))
             if usage_val > memory_limit:
                 self.finish(_build_msg_json(title="Memory Limits Surpassed", body="You are currently using "  + str(usage_val), actual_val=usage_val, zone="A"))
             elif usage_val > 0.75*memory_limit:
@@ -85,6 +86,7 @@ class Megaclite(IPythonHandler):
                 self.finish(_build_msg_json(title="Current Memory Usage", body="You are currently using " + str(usage_val), actual_val=usage_val, zone="S"))
         except:
             self.finish(json.dumps("Jupyter has many moons. Maybe double check your orbit. Megaclite is 148° to Jupiter's equator"))
+
 
 
 

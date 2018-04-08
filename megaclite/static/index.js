@@ -1,15 +1,17 @@
 define([
+        'require',
         'base/js/namespace',
         'jquery',
         'base/js/utils',
         'base/js/dialog'
-], function(Jupyter, $, utils, dialog) {
+], function(requirejs, Jupyter, $, utils, dialog) {
 
     function show_usage(){
+        var script_path = requirejs.toUrl("./megaclite.png");
         var jh_username = utils.get_body_data('baseUrl').match(/.*\/user\/(.*)\//)[1]
         var megacliteUrl = utils.url_path_join(utils.get_body_data('baseUrl'), 'megaclite/' + jh_username)
         $.getJSON(megacliteUrl, function(data){
-                $("#maintoolbar-container").append("<img src=\"megaclite.png\"/><span id=\"megaclite\"> &nbsp; <b> Memory Utilization : <span id=\"actual_val\">" + data['actual_val'] + "</span> MB </b></span>");
+                $("#maintoolbar-container").append("<img src=\"" + script_path + "\"  style=\"display: inline; max-width: 100px; padding-left:20px;\"/><span id=\"megaclite\"> &nbsp; <b> Memory Utilization : <span id=\"actual_val\">" + data['actual_val'] + "</span> MB </b></span>");
 
             });
     }
@@ -27,7 +29,7 @@ define([
             } else {
                 document.getElementById("actual_val").innerHTML = data['actual_val'];
 
-                if(data['zone'] == "N"){
+                if(data['zone'] == "S"){
                     document.getElementById("megaclite").style = "color: #339900;";
                 } else {
                     if(data['zone'] == "W"){
