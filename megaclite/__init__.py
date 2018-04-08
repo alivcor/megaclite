@@ -1,6 +1,6 @@
 from notebook.base.handlers import IPythonHandler
 from notebook.utils import url_path_join
-import os, sqlite3
+import os
 import json, requests
 from subprocess import Popen, PIPE
 import logging
