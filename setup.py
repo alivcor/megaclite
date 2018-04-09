@@ -19,5 +19,6 @@ setup(
     ],
     include_package_data=True,
     description="Resource Manager for Jupyter. A moon too.",
+    keywords = ['jupyterhub', 'memory', 'nbextension', 'jupyter', 'extension'], # arbitrary keywords
     long_description=long_desc,
 )
