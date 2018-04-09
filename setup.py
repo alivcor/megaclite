@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 try:
     long_desc = open('README.md').read()
 except:
-    long_desc = 'Megaclite'
+    long_desc = 'Megaclit'
 
 setup(
     name="megaclite",
